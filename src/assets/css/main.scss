@@ -1,0 +1,20 @@
+$fc: #ccc;
+
+.new-container {
+  text-align: left;
+  width: 100%;
+
+  .new-header, .new-footer {
+    padding: 10px;
+    border: 1px solid $fc;
+    line-height: 28px;
+  }
+
+  .main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    overflow: scroll;
+    border: 1px solid $fc;
+  }
+}
