@@ -2,11 +2,13 @@
   <div class="new-container">
     <div>Detail: </div>
     <news-detail :detail="detail"></news-detail>
+    <GlobalMask></GlobalMask>
   </div>
 </template>
 
 <script scoped>
 import NewsDetail from '@/components/news/Detail.vue'
+import GlobalMask from '@/components/GlobalMask.vue'
 
 export default {
   name: 'detail',
@@ -20,10 +22,23 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$store.state.mask)
+
     console.log('detail-mounted', this.$route.params)
+
+    this.closeMask()
+  },
+  methods: {
+    closeMask () {
+      let that = this
+      setTimeout(function () {
+        that.$store.commit('maskOnOff', false)
+      }, 2000)
+    }
   },
   components: {
-    NewsDetail
+    NewsDetail,
+    GlobalMask
   }
 }
 </script>
